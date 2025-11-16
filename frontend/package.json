@@ -1,0 +1,109 @@
+{
+  "name": "lab.flipper.net",
+  "version": "0.4.9",
+  "description": "Web platform for your Flipper",
+  "productName": "Flipper Lab",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flipperdevices/lab.flipper.net.git"
+  },
+  "author": {
+    "name": "Flipper Devices Inc.",
+    "url": "https://flipperdevices.com/",
+    "email": "support@flipperdevices.com"
+  },
+  "maintainers": [
+    {
+      "name": "Slipn3r",
+      "email": "61992469+Slipn3r@users.noreply.github.com"
+    },
+    {
+      "name": "Maxim Lyubimov",
+      "email": "m.lyubimov@flipperdevices.com"
+    }
+  ],
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "lint": "eslint -c ./eslint.config.js \"./src*/**/*.{ts,js,cjs,mjs,vue}\"",
+    "lint-fix": "eslint --fix --ext .js,.ts,.vue ./",
+    "format": "prettier --write \"**/*.{js,ts,vue,scss,sass,css,html,md,json}\" --ignore-path .eslintignore --config .prettierrc.json && yarn lint-fix",
+    "dev/web": "quasar dev",
+    "dev/electron": "quasar dev -m electron",
+    "dev/electron/devtools": "quasar dev -m electron --devtools",
+    "build/web": "PRODUCTION=TRUE quasar build -m spa",
+    "build/web/dev": "DEV=TRUE quasar build -m spa --debug",
+    "build/electron": "quasar build -m electron",
+    "build/electron/dev": "quasar build -m electron --debug",
+    "postinstall": "quasar prepare && electron-builder install-app-deps"
+  },
+  "dependencies": {
+    "@codemirror/lang-javascript": "^6.2.2",
+    "@codemirror/language": "^6.10.4",
+    "@codemirror/state": "^6.4.1",
+    "@codemirror/view": "^6.35.0",
+    "@lezer/common": "^1.2.3",
+    "@lezer/generator": "^1.7.1",
+    "@lezer/highlight": "^1.2.1",
+    "@lezer/lr": "^1.4.2",
+    "@quasar/extras": "^1.16.4",
+    "@types/loglevel": "^1.6.3",
+    "@xterm/addon-fit": "^0.10.0",
+    "@xterm/addon-serialize": "^0.13.0",
+    "@xterm/xterm": "^5.5.0",
+    "axios": "^1.2.1",
+    "base64-arraybuffer": "^1.0.2",
+    "codemirror": "^6.0.1",
+    "d3": "^7.9.0",
+    "jszip": "^3.10.1",
+    "lodash": "^4.17.21",
+    "loglevel": "^1.9.1",
+    "nanoevents": "^9.0.0",
+    "pako": "^2.1.0",
+    "pinia": "^2.0.11",
+    "protobufjs": "^7.3.2",
+    "quasar": "^2.16.0",
+    "semver": "^7.6.3",
+    "simple-async-sleep": "^1.0.3",
+    "vue": "^3.4.18",
+    "vue-router": "4.3.0",
+    "winston": "^3.17.0",
+    "winston-daily-rotate-file": "^5.0.0"
+  },
+  "devDependencies": {
+    "@electron/packager": "^18.3.2",
+    "@eslint/js": "^9.17.0",
+    "@quasar/app-vite": "^2.0.0",
+    "@quasar/quasar-app-extension-qmarkdown": "^2.0.4",
+    "@types/d3": "^7.4.3",
+    "@types/lodash": "^4.17.6",
+    "@types/node": "^12.20.21",
+    "@types/pako": "^2.0.3",
+    "@types/w3c-web-serial": "^1.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/parser": "^5.10.0",
+    "@vue/devtools": "^6.6.3",
+    "@vue/eslint-config-prettier": "^10.1.0",
+    "@vue/eslint-config-typescript": "^14.2.0",
+    "autoprefixer": "^10.4.2",
+    "electron": "^31.1.0",
+    "electron-builder": "^24.3.0",
+    "eslint": "9",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-vue": "^9.32.0",
+    "globals": "^15.14.0",
+    "prettier": "3",
+    "protobufjs-cli": "^1.1.2",
+    "typescript": "^5.7.3",
+    "vite-plugin-checker": "^0.8.0",
+    "vue-tsc": "^2.2.0"
+  },
+  "engines": {
+    "node": "^20 || ^18 || ^16",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  },
+  "main": "index.js",
+  "license": "MIT"
+}
